@@ -34,7 +34,7 @@ public class BowlingGame {
 //            }
 //        }
 //        return sum;
-        return -2;
+        return scores[0][0];
     }
     private boolean isStrike(int[] score) {
         return score[0] == 10;
