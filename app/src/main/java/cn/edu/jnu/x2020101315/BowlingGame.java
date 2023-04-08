@@ -5,7 +5,13 @@ public class BowlingGame {
     public int currentIndex = 0;
     public void roll(int i) {
         scores[currentIndex / 2][currentIndex % 2] = i;
-        currentIndex++;
+        if(i == 10)
+        {
+            currentIndex += 2;
+        }
+        else {
+            currentIndex++;
+        }
     }
     public int getScore()
     {
@@ -13,9 +19,14 @@ public class BowlingGame {
         for(int i = 0;i < 10;i++)
         {
             sum+=scores[i][0] + scores[i][1];
-            if(scores[i][0] + scores[i][1]== 10)
+            if(scores[i][0] == 10)
             {
-                sum += scores[i + 1][0];
+                sum += scores[i + 1][0] + scores[i + 1][1];
+            }
+            else {
+                if (scores[i][0] + scores[i][1] == 10) {
+                    sum += scores[i + 1][0];
+                }
             }
         }
         return sum;
