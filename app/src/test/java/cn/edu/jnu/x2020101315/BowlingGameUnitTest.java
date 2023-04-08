@@ -22,7 +22,7 @@ public class BowlingGameUnitTest {
         {
             game.roll(1);
         }
-        assertEquals(game.score, 1 * 10);
+        assertEquals(game.getScore(), 1 * 10);
     }
     @Test
     public void test_roll_second() {
@@ -30,7 +30,7 @@ public class BowlingGameUnitTest {
         game.roll(7);
         game.roll(8);
         rollMore(17,0);
-        assertEquals(game.score, 26);
+        assertEquals(game.getScore(), 26);
     }
 
     private void rollMore(int n, int i) {
