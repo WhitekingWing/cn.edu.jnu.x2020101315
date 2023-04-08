@@ -30,12 +30,22 @@ public class BowlingGameUnitTest {
     }
     @Test
     public void test_roll_third() {
-        game.roll(10);
+        rollStrike();
         game.roll(8);
         game.roll(1);
         rollMore(16,0);
         assertEquals(game.getScore(), 28);
     }
+    @Test
+    public void test_roll_forth(){
+        rollMore(12,10);
+        assertEquals(300, game.getScore());
+    }
+
+    private void rollStrike() {
+        game.roll(10);
+    }
+
     private void rollSpare() {
         game.roll(3);
         game.roll(7);
