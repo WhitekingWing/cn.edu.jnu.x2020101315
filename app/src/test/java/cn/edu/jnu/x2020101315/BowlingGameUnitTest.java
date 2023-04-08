@@ -16,19 +16,19 @@ public class BowlingGameUnitTest {
     public void init(){
         game = new BowlingGame();
     }
-    //@Test
+    @Test
     public void test_roll_first() {
         rollMore(10,1);
         assertEquals(game.getScore(), 1 * 10);
     }
-    //@Test
+    @Test
     public void test_roll_second() {
         rollSpare();
         game.roll(8);
         rollMore(17,0);
         assertEquals(game.getScore(), 26);
     }
-    //@Test
+    @Test
     public void test_roll_third() {
         rollStrike();
         game.roll(8);
@@ -36,7 +36,7 @@ public class BowlingGameUnitTest {
         rollMore(16,0);
         assertEquals(game.getScore(), 28);
     }
-    //@Test
+    @Test
     public void test_roll_forth(){
         rollMore(12,10);
         assertEquals(300, game.getScore());

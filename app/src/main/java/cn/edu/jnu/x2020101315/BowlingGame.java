@@ -13,28 +13,27 @@ public class BowlingGame {
     }
     public int getScore()
     {
-//        int sum = 0;
-//        for(int i = 0;i < 10;i++)
-//        {
-//            sum+=scores[i][0] + scores[i][1];
-//            if(isStrike(scores[i]))
-//            {
-//                if(isStrike(scores[i + 1])) {
-//                    sum += scores[i + 1][0] + scores[i + 2][0];
-//                }
-//                else
-//                {
-//                    sum += scores[i + 1][0] + scores[i + 1][1];
-//                }
-//            }
-//            else {
-//                if (isSpare10(scores[i])) {
-//                    sum += scores[i + 1][0];
-//                }
-//            }
-//        }
-//        return sum;
-        return scores[0][0];
+        int sum = 0;
+        for(int i = 0;i < 10;i++)
+        {
+            sum+=scores[i][0] + scores[i][1];
+            if(isStrike(scores[i]))
+            {
+                if(isStrike(scores[i + 1])) {
+                    sum += scores[i + 1][0] + scores[i + 2][0];
+                }
+                else
+                {
+                    sum += scores[i + 1][0] + scores[i + 1][1];
+                }
+            }
+            else {
+                if (isSpare10(scores[i])) {
+                    sum += scores[i + 1][0];
+                }
+            }
+        }
+        return sum;
     }
     private boolean isStrike(int[] score) {
         return score[0] == 10;
