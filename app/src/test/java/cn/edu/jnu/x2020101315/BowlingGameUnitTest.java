@@ -18,19 +18,27 @@ public class BowlingGameUnitTest {
     }
     @Test
     public void test_roll_first() {
-        for(int i = 0;i < 10;i++)
-        {
-            game.roll(1);
-        }
+        rollMore(10,1);
         assertEquals(game.getScore(), 1 * 10);
     }
     @Test
     public void test_roll_second() {
-        game.roll(3);
-        game.roll(7);
+        rollSpare();
         game.roll(8);
         rollMore(17,0);
         assertEquals(game.getScore(), 26);
+    }
+    @Test
+    public void test_roll_third() {
+        game.roll(10);
+        game.roll(8);
+        game.roll(1);
+        rollMore(16,0);
+        assertEquals(game.getScore(), 28);
+    }
+    private void rollSpare() {
+        game.roll(3);
+        game.roll(7);
     }
 
     private void rollMore(int n, int i) {
