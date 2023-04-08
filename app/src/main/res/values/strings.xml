@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">cn.edu.jnu.x2020101315</string>
+    <string name="scores">Please enter scores!</string>
 </resources>
